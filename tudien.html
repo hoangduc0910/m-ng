@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <input type=text id="keyword">
+  <button type="button" onclick="searchkeyword()">search</button>
+  <p id="result"></p>
+<script>
+         function searchkeyword(){
+             let keyword = document.getElementById("keyword").value;
+             let en = ["hi", "school", "bye" ]
+             let vn = ["chào","trường học","tạm biệt" ]
+             let indexVi = -1;
+             for (let i = 0; i < en.length; i++){
+                if(en[i] === keyword){
+                    indexVi = i;
+                    break;
+                }
+             }
+
+             if(indexVi === -1){
+                 document.getElementById("result").innerHTML = 'không tìm thấy'
+             }
+            else{
+                document.getElementById("result").innerHTML = vn[indexVi];
+             }
+         }
+     </script>
+
+</body>
+</html>
